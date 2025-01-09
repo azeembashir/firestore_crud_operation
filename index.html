@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firestore CRUD Operations</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+  </head>
+  <body>
+    <!-- <div id="notify">notify</div> -->
+    <div class="container">
+      <h1>Enter Your Details</h1>
+
+      <input
+        type="text"
+        id="input_name"
+        placeholder="Enter your name"
+        required
+      />
+      <input
+        type="email"
+        id="input_email"
+        placeholder="Enter your email"
+        required
+      />
+      <button id="submitData" class="submt">Add Data</button>
+      <button id="updateData" class="submt updsubmt">Update Data</button>
+    </div>
+
+    <div id="table_cont">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th colspan="2">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody id="table_data"></tbody>
+      </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

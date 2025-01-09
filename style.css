@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 130vh;
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #fff;
+}
+
+.container {
+    margin-top: 10px;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submt {
+
+    width: 100%;
+    padding: 10px;
+    background: #e63946;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    /* margin-bottom: 5px; */
+}
+
+.submt:hover {
+    background: #d62828;
+}
+
+.updsubmt {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+#notify {
+    position: absolute;
+    top: 10px;
+    padding: 10px;
+    
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#table_cont {
+    position: absolute;
+    top: 300px;
+    /* background-color: #d62828; */
+    /* padding: 10px; */
+    /* margin: 10px; */
+}
+
+/* #table_data{
+    padding-right: 50px;
+} */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #b1acac;
+}
+
+th {
+    background-color: #2575fc;
+    color: white;
+}
+
+td button {
+    padding: 5px 10px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+td button:hover {
+    background-color: #e11b00;
+}
+
+td i {
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+td i.edit-icon {
+    color: #4CAF50;
+}
+
+td i.delete-icon {
+    color: #f44336;
+}
