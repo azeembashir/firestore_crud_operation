@@ -113,49 +113,6 @@ window.deleteData = async function (id) {
   }
 };
 
-// update data
-
-// window.updateData = async function (id) {
-//   try {
-//     const docSnapShot = await getDoc(doc(db, "users", id));
-//     const currentUser = docSnapShot.data();
-//     document.getElementById("input_name").value = currentUser.name;
-//     document.getElementById("input_email").value = currentUser.email;
-
-//     const updateDataBtn = document.getElementById("updateData");
-//     updateDataBtn.classList.add("show");
-//     submitData.classList.add("hide");
-
-//     updateDataBtn.replaceWith(updateDataBtn.cloneNode(true));
-//     updateDataBtn.addEventListener("click", async function () {
-//       const newName = document.getElementById("input_name").value;
-//       const newEmail = document.getElementById("input_email").value;
-
-//       if (newName && newEmail) {
-//         await updateDoc(doc(db, "users", id), {
-//           name: newName,
-//           email: newEmail,
-//         });
-
-//         notify.innerHTML = "Data Updated Successfully!";
-//         setTimeout(() => {
-//           notify.innerHTML = "";
-//         }, 2000);
-//         getData();
-
-//         // Reset form
-//         document.getElementById("input_name").value = "";
-//         document.getElementById("input_email").value = "";
-//         updateDataBtn.classList.remove("show");
-//         submitData.classList.remove("hide");
-//       }
-//     });
-//     // updateDataBtn.classList.remove("show");
-//     // submitData.classList.remove("hide");
-//   } catch (e) {
-//     console.log(e);
-//   }
-// };
 
 
 
