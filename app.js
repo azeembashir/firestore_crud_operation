@@ -27,7 +27,7 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 // create data
-// const notify = document.getElementById("notify");
+
 
 async function addData() {
   const input_name = document.getElementById("input_name");
@@ -39,18 +39,18 @@ async function addData() {
       email: input_email.value,
     });
 
-    // notify.innerHTML = `Data Added Successfully ID: ${docRef.id}`;
+    
     Swal.fire(`ID: ${docRef.id}`, "Data Added Successfully", "success");
     input_name.value = "";
     input_email.value = "";
 
     setTimeout(() => {
-      // notify.innerHTML = "";
+      
     }, 2000);
 
     getData();
 
-    // console.log("Document written with ID: ", docRef.id);
+    
   } catch (e) {
     console.error("Error adding document: ", e);
   }
@@ -66,10 +66,7 @@ async function getData() {
     const querySnapshot = await getDocs(collection(db, "users"));
     let html = "";
     querySnapshot.forEach((doc) => {
-      // ham is tareeke se b doc data ko read ya get kar sakty hen(1)
-      // console.log(`${doc.id}`);
-      // const { name, email } = doc.data();
-      // console.log(name, email);
+      
 
       // (2)
       const data = doc.data();
@@ -101,12 +98,10 @@ getData();
 window.deleteData = async function (id) {
   try {
     await deleteDoc(doc(db, "users", id));
-    // notify.innerHTML = "Data Deleted";
+  
     Swal.fire(`ID: ${id}`, "Data Deleted successfully!", "success");
 
-    // setTimeout(() => {
-    //   notify.innerHTML = "";
-    // }, 2000);
+    
     getData();
   } catch (e) {
     console.log(e);
@@ -118,22 +113,22 @@ window.deleteData = async function (id) {
 
 window.updateData = async function (id) {
   try {
-    // Fetch the document snapshot and populate the input fields
+    
     const docSnapShot = await getDoc(doc(db, "users", id));
     const currentUser = docSnapShot.data();
     document.getElementById("input_name").value = currentUser.name;
     document.getElementById("input_email").value = currentUser.email;
 
-    // Show the update button and hide the submit button
+    
     const updateDataBtn = document.getElementById("updateData");
     updateDataBtn.classList.add("show");
     submitData.classList.add("hide");
 
-    // Remove existing event listeners by replacing the button
+    
     const newUpdateDataBtn = updateDataBtn.cloneNode(true);
     updateDataBtn.replaceWith(newUpdateDataBtn);
 
-    // Attach a single event listener for the update operation
+  
     newUpdateDataBtn.addEventListener("click", async function () {
       const newName = document.getElementById("input_name").value;
       const newEmail = document.getElementById("input_email").value;
@@ -144,27 +139,20 @@ window.updateData = async function (id) {
           email: newEmail,
         });
 
-        // Notify success
-        // notify.innerHTML = "Data Updated Successfully!";
+        
         Swal.fire(`ID: ${id}`, "Data Updated Successfully!", "success");
-        // setTimeout(() => {
-        //   notify.innerHTML = "";
-        // }, 2000);
-
-        // Refresh the table and reset the form
+        
         getData();
         document.getElementById("input_name").value = "";
         document.getElementById("input_email").value = "";
 
-        // Hide the update button and show the submit button
+        
         newUpdateDataBtn.classList.remove("show");
         submitData.classList.remove("hide");
       } else {
-        // notify.innerHTML = "Please fill out all fields!";
+        
         Swal.fire("Error", "Please fill out all fields!", "error");
-        // setTimeout(() => {
-        //   notify.innerHTML = "";
-        // }, 2000);
+        
       }
     });
   } catch (e) {

@@ -45,7 +45,7 @@ input {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
-    /* margin-bottom: 5px; */
+    
 }
 
 .submt:hover {
@@ -78,14 +78,10 @@ input {
 #table_cont {
     position: absolute;
     top: 300px;
-    /* background-color: #d62828; */
-    /* padding: 10px; */
-    /* margin: 10px; */
+    
 }
 
-/* #table_data{
-    padding-right: 50px;
-} */
+
 table {
     width: 100%;
     margin-top: 20px;
